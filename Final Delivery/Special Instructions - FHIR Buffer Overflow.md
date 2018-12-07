@@ -10,8 +10,6 @@
 
 ![Image](./imgs/github.png)
 
-
-
 |Team Members | GT Username | Email |
 | ------------| ----------- | ----- |
 | Varun Behl  | vbehl3      | vbehl@gatech.edu|
@@ -22,23 +20,29 @@
 | Vijay Pothona | vpothana3 | vpothana3@gatech.edu |
 
 #### Technical Requirements
-1. Install docker-compose
-2. Install maven
-3. Install gradle
+##### Install docker
+On MacOS,
+`brew cask install docker`
+##### Install docker-compose
 
 #### How to run the Application
-##### Step 1: Clone the repository 
+##### Step 1: Run docker
+On MacOS, click on the Docker app with the whale icon.
+##### Step 2: Clone the repository 
 `git clone https://github.gatech.edu/gt-cs6440-hit-fall2018/Utilizing-FHIR-Bulk-Data-API-for-Real-Time-Public-Health-Needs-Assessments.git`
-##### Step 2: Change into the server directory
+##### Step 3: Change into the server directory
 `cd bulk_fhir_server`
-##### Step 3: Run mvnw
+##### Step 4: Run mvnw
 `./mvnw package`
-##### Step 4: Change into the curator directory
+##### Step 5: Change into the curator directory
 `cd ../bulk_fhir_resource_curator/`
-##### Step 5: Build gradle
+##### Step 6: Build gradle
 `./gradlew build`
-##### Step 6: Go back to root directory
+##### Step 7: Go back to root directory
 `cd ..`
-##### Step 7: Start/build docker
+##### Step 8: Start/build docker
 `docker-compose up -d --build`
- 
+##### Step 9: View results
+Launch https://cs6440-f18-prj20.apps.hdap.gatech.edu/ on your browser.
+
+(Note: Since we use docker for everything (including the database), every time we push, it rebuilds the data. It takes around 2 hours or so to get the curator to get all the source systems data normalized.)
