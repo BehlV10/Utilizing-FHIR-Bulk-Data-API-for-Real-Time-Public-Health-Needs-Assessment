@@ -1,0 +1,14 @@
+{
+  "resourceType": "OperationOutcome",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h1>Operation Outcome</h1><table border=\"0\"><tr><td style=\"font-weight:bold;\">information</td><td>[]</td><td><pre>Your request have been accepted. You can check it's status at &quot;https://enigmatic-waters-34317.herokuapp.com/eyJpZCI6IjViYjFjZDlhMzk4YWNlMGIyYmYxYzVjNzYyZDNhMTc2MTA4MjQ0Njg1MWU5YmZhNGZkOWY4Nzg2YjcyODBjNGQiLCJyZXF1ZXN0U3RhcnQiOjE1NDE5Nzc5NjUyMDcsInNlY3VyZSI6dHJ1ZSwicmVxdWVzdCI6Imh0dHA6Ly9lbmlnbWF0aWMtd2F0ZXJzLTM0MzE3Lmhlcm9rdWFwcC5jb20vZmhpci9QYXRpZW50LyRleHBvcnQ_X291dHB1dEZvcm1hdD1hcHBsaWNhdGlvbi9maGlyK25kanNvbiJ9/fhir/bulkstatus&quot;</pre></td></tr></table></div>"
+  },
+  "issue": [
+    {
+      "severity": "information",
+      "code": "processing",
+      "diagnostics": "Your request have been accepted. You can check it's status at \"https://enigmatic-waters-34317.herokuapp.com/eyJpZCI6IjViYjFjZDlhMzk4YWNlMGIyYmYxYzVjNzYyZDNhMTc2MTA4MjQ0Njg1MWU5YmZhNGZkOWY4Nzg2YjcyODBjNGQiLCJyZXF1ZXN0U3RhcnQiOjE1NDE5Nzc5NjUyMDcsInNlY3VyZSI6dHJ1ZSwicmVxdWVzdCI6Imh0dHA6Ly9lbmlnbWF0aWMtd2F0ZXJzLTM0MzE3Lmhlcm9rdWFwcC5jb20vZmhpci9QYXRpZW50LyRleHBvcnQ_X291dHB1dEZvcm1hdD1hcHBsaWNhdGlvbi9maGlyK25kanNvbiJ9/fhir/bulkstatus\""
+    }
+  ]
+}
