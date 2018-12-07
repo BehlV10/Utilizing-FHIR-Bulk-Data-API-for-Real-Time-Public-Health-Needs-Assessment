@@ -5,6 +5,8 @@ services:
     build: 
       context: bulk_fhir_datastore
     restart: always
+    ports:
+      - 3306:3306
   jwks-server:
     image: jwks-server:latest
     build: 
