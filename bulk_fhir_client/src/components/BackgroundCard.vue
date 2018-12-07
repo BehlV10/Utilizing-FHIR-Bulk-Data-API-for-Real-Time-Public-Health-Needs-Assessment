@@ -14,8 +14,8 @@
             class="sources">
           <v-progress-linear slot="progress" color="blue" indeterminate></v-progress-linear>
           <template class="source" slot="items" slot-scope="props">
-            <td class="text-xs-center">{{ props.item.source }}</td>
-            <td class="text-xs-center">{{ props.item.meta.patients_count }}</td>
+            <td class="text-xs-center">{{ props.item.sourceSystemName }}</td>
+            <td class="text-xs-center">{{ props.item.count }}</td>
           </template>
           </v-data-table>
         </template>
@@ -23,60 +23,58 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
-import CardWrapper from "@/components/CardWrapper.vue";
+import { mapActions, mapState } from 'vuex'
+import CardWrapper from '@/components/CardWrapper.vue'
 
 export default {
-  data() {
+  data () {
     return {
       loading: true,
       headers: [
         {
-          text: "Sources",
-          align: "center",
+          text: 'Sources',
+          align: 'center',
           sortable: false,
-          value: "source"
+          value: 'source'
         },
         {
-          text: "Patients",
-          value: "patient",
-          align: "center",
+          text: 'Patients',
+          value: 'patient',
+          align: 'center',
           sortable: false
         }
       ],
       totals: {
-        source: "Total",
-        meta: {
-          patients_count: 0
-        }
+        sourceSystemName: 'Total',
+        count: 0
       }
-    };
+    }
   },
-  mounted() {
+  mounted () {
     this.fetchSources().finally(() => {
-      this.loading = false;
-    });
+      this.loading = false
+    })
   },
   methods: {
-    ...mapActions(["fetchSources"])
+    ...mapActions(['fetchSources'])
   },
   computed: {
-    ...mapState(["sources"]),
-    presented() {
+    ...mapState(['sources']),
+    presented () {
       return [...this.sources, this.totals]
     }
   },
   watch: {
-    sources(sources) {
+    sources (sources) {
       sources.forEach(source => {
-        this.totals.meta.patients_count += source.meta.patients_count;
-      });
+        this.totals.count += source.count
+      })
     }
   },
   components: {
-    "card-wrapper": CardWrapper
+    'card-wrapper': CardWrapper
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
