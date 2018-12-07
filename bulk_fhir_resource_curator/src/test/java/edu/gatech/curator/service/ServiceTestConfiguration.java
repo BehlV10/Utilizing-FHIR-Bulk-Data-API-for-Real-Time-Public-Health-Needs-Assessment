@@ -23,5 +23,8 @@ public class ServiceTestConfiguration {
     FhirResourceProcessorService fhirResourceProcessorService() {
         return mock(FhirResourceProcessorService.class);
     }
+
+    @Bean
+    PostCurationProcessorService postCurationProcessorService() { return mock(PostCurationProcessorService.class); }
 }
 

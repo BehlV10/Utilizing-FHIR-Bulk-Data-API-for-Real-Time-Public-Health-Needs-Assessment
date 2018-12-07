@@ -15,7 +15,6 @@ import org.hl7.fhir.dstu3.model.CarePlan;
 import org.hl7.fhir.dstu3.model.Observation;
 import org.hl7.fhir.dstu3.model.Patient;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -37,6 +36,8 @@ import static org.mockito.Mockito.*;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class FhirResourceProcessorServiceTest {
+    @MockBean
+    PostCurationProcessorService postCurationProcessorService;
 
     @MockBean
     private SourceSystemService mockSourceSystemService;

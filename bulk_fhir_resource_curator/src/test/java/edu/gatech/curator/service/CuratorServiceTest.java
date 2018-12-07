@@ -33,6 +33,9 @@ public class CuratorServiceTest {
     @MockBean
     private FhirResourceProcessorService resourceProcessor;
 
+    @MockBean
+    PostCurationProcessorService postCurationProcessorService;
+
     @Autowired
     private CuratorService subject;
 

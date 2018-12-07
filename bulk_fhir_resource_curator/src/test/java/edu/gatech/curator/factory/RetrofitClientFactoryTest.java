@@ -3,6 +3,7 @@ package edu.gatech.curator.factory;
 import edu.gatech.curator.client.BulkFhirApiClient;
 import edu.gatech.curator.entity.SourceSystemEntity;
 import edu.gatech.curator.service.CuratorService;
+import edu.gatech.curator.service.ServiceTestConfiguration;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.net.MalformedURLException;
@@ -19,6 +21,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
+@Import(ServiceTestConfiguration.class)
 @RunWith(SpringRunner.class)
 public class RetrofitClientFactoryTest {
 

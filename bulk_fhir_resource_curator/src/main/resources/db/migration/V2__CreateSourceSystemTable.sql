@@ -9,7 +9,6 @@ CREATE TABLE source_system(
   jku VARCHAR(255) NOT NULL,
   access_token VARCHAR(2048),
   last_updated DATETIME NOT NULL DEFAULT '2000-01-01',
-  blockgroup VARCHAR(15),
 
   PRIMARY KEY(id)
 );

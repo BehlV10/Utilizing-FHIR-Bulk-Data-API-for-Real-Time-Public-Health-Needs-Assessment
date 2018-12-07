@@ -1,6 +1,7 @@
 package edu.gatech.curator;
 
 import edu.gatech.curator.service.CuratorService;
+import edu.gatech.curator.service.PostCurationProcessorService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -21,9 +22,10 @@ public class CuratorApplication {
 	}
 
 	@Bean
-	public CommandLineRunner runner(CuratorService curatorService) {
+	public CommandLineRunner runner(CuratorService curatorService, PostCurationProcessorService postCurationProcessorService) {
 		return (args -> {
 			curatorService.start();
+			postCurationProcessorService.start();
 		});
 	}
 }

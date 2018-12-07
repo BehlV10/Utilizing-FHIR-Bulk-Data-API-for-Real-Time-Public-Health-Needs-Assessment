@@ -1,12 +1,11 @@
-CREATE TABLE obesity_metrics(
-	  id VARCHAR(255),
-    gender VARCHAR(255) NOT NULL,
-    year INT NOT NULL,
-    underweight INT NOT NULL,
-    healthy INT NOT NULL,
-    overweight INT NOT NULL,
-    obese INT NOT NULL,
-    last_updated DATETIME NOT NULL DEFAULT '2000-01-01',
-
-    PRIMARY KEY (id)
+create table obesity_metrics
+(
+  id           int auto_increment
+    primary key,
+  gender       varchar(255)                           not null,
+  underweight  int                                    not null,
+  healthy      int                                    not null,
+  overweight   int                                    not null,
+  obese        int                                    not null,
+  last_updated datetime default '2000-01-01 00:00:00'  not null
 );

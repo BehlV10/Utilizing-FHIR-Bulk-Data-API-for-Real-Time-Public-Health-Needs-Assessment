@@ -9,16 +9,10 @@ public class ObesityMetricEntity {
 
     @Id
     @Column(name = "id")
-    private String id;
+    private int id;
 
     @Column(name = "gender")
     private String gender;
-
-    @Column(name = "year")
-    private int year;
-
-    @Column(name = "age")
-    private String age;
 
     @Column(name = "underweight")
     private int underweight;
@@ -33,14 +27,14 @@ public class ObesityMetricEntity {
     private int obese;
 
     @Column(name = "last_updated")
-    @Temporal(TemporalType.DATE)
-    private Date last_updated;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastUpdated;
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -50,22 +44,6 @@ public class ObesityMetricEntity {
 
     public void setGender(String gender) {
         this.gender = gender;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
     }
 
     public int getUnderweight() {
@@ -100,11 +78,11 @@ public class ObesityMetricEntity {
         this.obese = obese;
     }
 
-    public Date getLast_updated() {
-        return last_updated;
+    public Date getLastUpdated() {
+        return lastUpdated;
     }
 
-    public void setLast_updated(Date last_updated) {
-        this.last_updated = last_updated;
+    public void setLastUpdated(Date lastUpdated) {
+        this.lastUpdated = lastUpdated;
     }
 }

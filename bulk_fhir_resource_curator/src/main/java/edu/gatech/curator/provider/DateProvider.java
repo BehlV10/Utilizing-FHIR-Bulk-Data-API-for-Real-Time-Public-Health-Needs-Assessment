@@ -9,6 +9,10 @@ public class DateProvider {
     private static long DAY_IN_MS = 1000 * 60 * 60 * 24;
     private static long FIFTEEN_MIN_IN_MS = 1000 * 60 * 15;
 
+    public Date now() {
+        return new Date(System.currentTimeMillis());
+    }
+
     public Date oneWeekAgo() {
         return new Date(System.currentTimeMillis() - (7 * DAY_IN_MS));
     }

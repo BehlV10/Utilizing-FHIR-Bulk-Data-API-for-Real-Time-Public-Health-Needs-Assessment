@@ -37,6 +37,9 @@ public class PatientEntity {
     @Column(name = "source_system_name")
     private String sourceSystemName;
 
+    @Column(name = "blockgroup")
+    private String blockgroup;
+
     public String getId() {
         return id;
     }
@@ -99,6 +102,14 @@ public class PatientEntity {
 
     public void setSourceSystemName(String sourceSystemName) {
         this.sourceSystemName = sourceSystemName;
+    }
+
+    public String getBlockgroup() {
+        return blockgroup;
+    }
+
+    public void setBlockgroup(String blockgroup) {
+        this.blockgroup = blockgroup;
     }
 
     public static class PatientPrimaryKey implements Serializable {

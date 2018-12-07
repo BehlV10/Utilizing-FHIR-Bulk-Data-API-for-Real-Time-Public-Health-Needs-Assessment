@@ -39,6 +39,8 @@ import static org.mockito.Mockito.*;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SourceSystemServiceTest {
+    @MockBean
+    PostCurationProcessorService postCurationProcessorService;
 
     @MockBean
     private DateProvider mockDateProvider;
