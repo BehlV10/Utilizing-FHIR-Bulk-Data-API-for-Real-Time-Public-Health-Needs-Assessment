@@ -1,0 +1,1 @@
+DROP SCHEMA bulk_fhir_datastore;

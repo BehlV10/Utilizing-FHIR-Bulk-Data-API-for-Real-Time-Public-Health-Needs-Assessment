@@ -1,0 +1,38 @@
+version: '3.0'
+services:
+  bulk-fhir-datastore:
+    image: bulk-fhir-datastore:latest
+    build: 
+      context: bulk_fhir_datastore
+    restart: always
+  jwks-server:
+    image: jwks-server:latest
+    build: 
+      context: jwks_server
+    restart: always
+    ports: 
+      - 8180:80
+  bulk-fhir-client:
+    image: bulk-fhir-client:latest
+    build: 
+      context: bulk_fhir_client
+    restart: always
+    ports:
+      - 5000:80
+  bulk-fhir-server:
+    image: bulk-fhir-server:latest
+    build: 
+      context: bulk_fhir_server
+    restart: always
+    ports:
+      - 5001:8080
+    depends_on:
+      - "bulk-fhir-datastore"
+  bulk-fhir-curator:
+    image: bulk-fhir-curator:latest
+    build: 
+      context: bulk_fhir_resource_curator
+    restart: always
+    depends_on:
+      - "bulk-fhir-datastore"
+      

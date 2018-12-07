@@ -1,0 +1,46 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.6.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+        maven {
+            url "https://oss.sonatype.org/content/repositories/snapshots"
+        }
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'edu.gatech'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa:2.0.6.RELEASE')
+    implementation('ca.uhn.hapi.fhir:hapi-fhir-structures-dstu3:3.6.0')
+    implementation('mysql:mysql-connector-java:8.0.13')
+    implementation('org.flywaydb:flyway-core:5.2.0')
+    implementation('com.fasterxml.jackson.core:jackson-databind:2.9.4')
+    implementation('com.squareup.retrofit2:retrofit:2.4.0')
+    implementation('com.squareup.retrofit2:converter-jackson:2.4.0')
+	implementation('io.jsonwebtoken:jjwt-api:0.10.5')
+    implementation('io.jsonwebtoken:jjwt-jackson:0.10.5')
+    // FIXES: java.lang.ClassNotFoundException: javax.xml.bind.JAXBException
+//    implementation('javax.xml.bind:jaxb-api:2.3.1')
+	runtime('io.jsonwebtoken:jjwt-impl:0.10.5')
+    testImplementation('org.springframework.boot:spring-boot-starter-test:2.0.6.RELEASE')
+    testImplementation('org.springframework.boot:spring-boot-test-autoconfigure:2.0.6.RELEASE')
+    testImplementation('com.h2database:h2:1.4.197')
+    // FIXES: update Hibernate dependency on Javassist to 3.23.1 for Java 11 compatibility
+//    testImplementation('org.javassist:javassist:3.23.1-GA')
+}
